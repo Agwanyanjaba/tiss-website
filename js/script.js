@@ -1,3 +1,36 @@
+// Set current year in copyright
+document.getElementById('current-year').textContent = new Date().getFullYear();
+
+// Search functionality
+const searchBtn = document.getElementById('search-btn');
+const searchContainer = document.getElementById('search-container');
+const searchInput = document.getElementById('search-input');
+const searchSubmit = document.getElementById('search-submit');
+
+if (searchBtn && searchContainer) {
+  searchBtn.addEventListener('click', () => {
+    searchContainer.style.display = searchContainer.style.display === 'block' ? 'none' : 'block';
+    if (searchContainer.style.display === 'block') {
+      searchInput.focus();
+    }
+  });
+
+  searchSubmit.addEventListener('click', () => {
+    const query = searchInput.value.trim();
+    if (query) {
+      // For now, just alert the search query
+      // In a real implementation, this would search the content or redirect to search results
+      alert(`Searching for: ${query}`);
+    }
+  });
+
+  searchInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      searchSubmit.click();
+    }
+  });
+}
+
 const faders = document.querySelectorAll('.fade');
 
 const observer = new IntersectionObserver(entries => {

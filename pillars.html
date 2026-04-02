@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pillars | TISS</title>
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -19,8 +20,15 @@
     <a href="publications.html">Publications</a>
     <a href="partnerships.html">Partnerships</a>
     <a href="contact.html">Contact</a>
+    <button class="search-btn" id="search-btn"><i class="fas fa-search"></i></button>
   </div>
 </nav>
+
+<div class="search-container" id="search-container">
+  <input type="text" id="search-input" placeholder="Search...">
+  <button id="search-submit">Search</button>
+</div>
+
 <section>
 <h2>Core Thematic Pillars</h2>
 <p>Our work is organized around six interconnected pillars that reflect the full spectrum of strategic inquiry:</p>
@@ -77,7 +85,7 @@
 </ol>
 </section>
 
-<footer><p>© 2026 TISS</p></footer>
+<footer><p>© <span id="current-year"></span> TISS</p></footer>
 
 <script src="js/script.js"></script>
 </body>

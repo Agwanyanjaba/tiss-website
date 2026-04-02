@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Partnerships | TISS</title>
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -19,8 +20,14 @@
     <a href="publications.html">Publications</a>
     <a href="partnerships.html" class="active">Partnerships</a>
     <a href="contact.html">Contact</a>
+    <button class="search-btn" id="search-btn"><i class="fas fa-search"></i></button>
   </div>
 </nav>
+
+<div class="search-container" id="search-container">
+  <input type="text" id="search-input" placeholder="Search...">
+  <button id="search-submit">Search</button>
+</div>
 
 <section>
 <h2>Strategic Partnerships</h2>
@@ -49,33 +56,34 @@
 <h2>Looking Forward</h2>
 <p>The Tiordekuei Institute for Strategic Studies is built for the long horizon. As the global landscape continues to evolve, TISS remains committed to its founding purpose: to provide the foresight, analysis, and platforms leaders need to act with wisdom and courage. We invite partners, scholars, and decision-makers to join us in this essential work—where research informs policy, where dialogue fosters understanding, and where the architects of change converge to shape a more secure and equitable future.</p>
 
-<section>
 <h2>Our Partners</h2>
 <div class="partners-list">
-  <div class="partner">University of Juba</div>
-  <div class="partner">UNDP</div>
-  <div class="partner">World Bank</div>
-  <div class="partner">African Union</div>
-  <div class="partner">Save the Children</div>
-  <div class="partner">Oxfam</div>
-  <div class="partner">Harvard University</div>
-  <div class="partner">IMF</div>
-  <div class="partner">European Commission</div>
-  <div class="partner">USAID</div>
-  <div class="partner">University of Juba</div>
-  <div class="partner">UNDP</div>
-  <div class="partner">World Bank</div>
-  <div class="partner">African Union</div>
-  <div class="partner">Save the Children</div>
-  <div class="partner">Oxfam</div>
-  <div class="partner">Harvard University</div>
-  <div class="partner">IMF</div>
-  <div class="partner">European Commission</div>
-  <div class="partner">USA</div>
+  <div class="partner"><i class="fas fa-university"></i> University of Juba</div>
+  <div class="partner"><i class="fas fa-globe"></i> UNDP</div>
+  <div class="partner"><i class="fas fa-landmark"></i> World Bank</div>
+  <div class="partner"><i class="fas fa-globe-africa"></i> African Union</div>
+  <div class="partner"><i class="fas fa-child"></i> Save the Children</div>
+  <div class="partner"><i class="fas fa-hands-helping"></i> Oxfam</div>
+  <div class="partner"><i class="fas fa-university"></i> Harvard University</div>
+  <div class="partner"><i class="fas fa-money-bill-wave"></i> IMF</div>
+  <div class="partner"><i class="fas fa-euro-sign"></i> European Commission</div>
+  <div class="partner"><i class="fas fa-hand-holding-heart"></i> USAID</div>
+  <div class="partner"><i class="fas fa-university"></i> University of Juba</div>
+  <div class="partner"><i class="fas fa-globe"></i> UNDP</div>
+  <div class="partner"><i class="fas fa-landmark"></i> World Bank</div>
+  <div class="partner"><i class="fas fa-globe-africa"></i> African Union</div>
+  <div class="partner"><i class="fas fa-child"></i> Save the Children</div>
+  <div class="partner"><i class="fas fa-hands-helping"></i> Oxfam</div>
+  <div class="partner"><i class="fas fa-university"></i> Harvard University</div>
+  <div class="partner"><i class="fas fa-money-bill-wave"></i> IMF</div>
+  <div class="partner"><i class="fas fa-euro-sign"></i> European Commission</div>
+  <div class="partner"><i class="fas fa-hand-holding-heart"></i> USA</div>
 </div>
 </section>
 
-<footer><p>© 2026 TISS</p></footer>
+<footer>
+<p>© <span id="current-year"></span> TISS</p>
+</footer>
 
 <script src="js/script.js"></script>
 </body>
