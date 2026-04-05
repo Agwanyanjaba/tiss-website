@@ -1,6 +1,17 @@
 // Set current year in copyright
 document.getElementById('current-year').textContent = new Date().getFullYear();
 
+// Mobile menu toggle
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+if (hamburger && navLinks) {
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    hamburger.classList.toggle('active');
+  });
+}
+
 // Search functionality
 const searchBtn = document.getElementById('search-btn');
 const searchContainer = document.getElementById('search-container');

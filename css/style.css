@@ -41,12 +41,34 @@ nav h1 {
   font-size: 20px;
 }
 
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
 nav a {
   color: white;
   margin-left: 20px;
   text-decoration: none;
   font-weight: 500;
   position: relative;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 3px 0;
+  transition: 0.3s;
 }
 
 nav a::after {
@@ -382,4 +404,135 @@ footer {
 .fade.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  nav {
+    padding: 15px 20px;
+  }
+
+  nav h1 {
+    font-size: 18px;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--primary);
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    margin-left: 0;
+    margin-bottom: 15px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+  .hero {
+    height: 40vh;
+  }
+
+  .slide-content {
+    padding: 30px;
+  }
+
+  .slide-content h2 {
+    font-size: 24px;
+  }
+
+  .partners-list {
+    gap: 15px;
+  }
+
+  .partner {
+    min-width: 100px;
+    padding: 15px;
+  }
+
+  .partner i {
+    font-size: 20px;
+  }
+
+  footer {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    padding: 10px 15px;
+  }
+
+  nav h1 {
+    font-size: 16px;
+  }
+
+  .hero {
+    height: 30vh;
+  }
+
+  .slide-content {
+    padding: 20px;
+  }
+
+  .slide-content h2 {
+    font-size: 20px;
+  }
+
+  .slider-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .partners-list {
+    gap: 10px;
+  }
+
+  .partner {
+    min-width: 80px;
+    padding: 10px;
+  }
+
+  .partner i {
+    font-size: 18px;
+  }
+
+  .search-container {
+    padding: 15px;
+    margin: 15px 0;
+  }
+
+  .search-container input {
+    width: 60%;
+  }
+
+  footer {
+    padding: 15px;
+  }
 }
