@@ -1,46 +1,49 @@
 // Set current year in copyright
-document.getElementById('current-year').textContent = new Date().getFullYear();
-
-// Mobile menu toggle
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.querySelector('.nav-links');
-
-if (hamburger && navLinks) {
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    hamburger.classList.toggle('active');
-  });
+const yearElement = document.getElementById('current-year');
+if (yearElement) {
+  yearElement.textContent = new Date().getFullYear();
 }
 
-// Search functionality
-const searchBtn = document.getElementById('search-btn');
-const searchContainer = document.getElementById('search-container');
-const searchInput = document.getElementById('search-input');
-const searchSubmit = document.getElementById('search-submit');
+document.addEventListener('DOMContentLoaded', () => {
+  // Mobile menu toggle
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.querySelector('.nav-links');
 
-if (searchBtn && searchContainer) {
-  searchBtn.addEventListener('click', () => {
-    searchContainer.style.display = searchContainer.style.display === 'block' ? 'none' : 'block';
-    if (searchContainer.style.display === 'block') {
-      searchInput.focus();
-    }
-  });
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      hamburger.classList.toggle('active');
+    });
+  }
 
-  searchSubmit.addEventListener('click', () => {
-    const query = searchInput.value.trim();
-    if (query) {
-      // For now, just alert the search query
-      // In a real implementation, this would search the content or redirect to search results
-      alert(`Searching for: ${query}`);
-    }
-  });
+  // Search functionality
+  const searchBtn = document.getElementById('search-btn');
+  const searchContainer = document.getElementById('search-container');
+  const searchInput = document.getElementById('search-input');
+  const searchSubmit = document.getElementById('search-submit');
 
-  searchInput.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-      searchSubmit.click();
-    }
-  });
-}
+  if (searchBtn && searchContainer) {
+    searchBtn.addEventListener('click', () => {
+      searchContainer.style.display = searchContainer.style.display === 'block' ? 'none' : 'block';
+      if (searchContainer.style.display === 'block') {
+        searchInput.focus();
+      }
+    });
+
+    searchSubmit.addEventListener('click', () => {
+      const query = searchInput.value.trim();
+      if (query) {
+        alert(`Searching for: ${query}`);
+      }
+    });
+
+    searchInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        searchSubmit.click();
+      }
+    });
+  }
+});
 
 const faders = document.querySelectorAll('.fade');
 
@@ -61,21 +64,27 @@ const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
 
 function updateSlider() {
+  if (!slider) return;
   slider.style.transform = `translateX(-${currentSlide * 33.333}%)`;
 }
 
-prevBtn.addEventListener('click', () => {
-  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-  updateSlider();
-});
+if (slider && slides.length > 0) {
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      updateSlider();
+    });
+  }
 
-nextBtn.addEventListener('click', () => {
-  currentSlide = (currentSlide + 1) % slides.length;
-  updateSlider();
-});
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      updateSlider();
+    });
+  }
 
-// Auto slide
-setInterval(() => {
-  currentSlide = (currentSlide + 1) % slides.length;
-  updateSlider();
-}, 4000);
+  setInterval(() => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    updateSlider();
+  }, 4000);
+}

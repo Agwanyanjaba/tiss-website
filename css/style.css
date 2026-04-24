@@ -34,6 +34,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
+  position: relative;
 }
 
 nav h1 {
@@ -44,6 +45,8 @@ nav h1 {
 .nav-links {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 nav a {
@@ -458,15 +461,32 @@ footer {
     background: var(--primary);
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1001;
+    max-height: 90vh;
+    overflow-y: auto;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
   }
 
   .nav-links.active {
-    display: flex;
+    display: flex !important;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .nav-links a,
+  .nav-links .search-btn {
+    width: 100%;
   }
 
   .nav-links a {
     margin-left: 0;
     margin-bottom: 15px;
+  }
+
+  .nav-links .search-btn {
+    margin: 0;
   }
 
   .hamburger {
